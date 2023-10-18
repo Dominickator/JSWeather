@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("cantarell/cantarell.css");
+
+body{
+    font-family: 'Cantarell';
+}
+
+h1{
+    font-size: 7rem;
+    font-weight: 600;
+    text-align: center;
+}
