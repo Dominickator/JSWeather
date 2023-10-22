@@ -18,7 +18,7 @@ Planned Functions:
     git clone https://github.com/Dominickator/JSWeather.git
     cd JSWeather
 ```
-3. Install npm if you do not already have it.\
+3. Install npm if you do not already have it.
 Fedora: ```sudo dnf install nodejs```\
 Arch: ```sudo pacman -S nodejs```\
 Ubuntu: ```sudo apt install nodejs```
