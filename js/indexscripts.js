@@ -1,9 +1,6 @@
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(location) {
-            console.log(location.coords.latitude);
-            console.log(location.coords.longitude);
-            console.log(location.coords.accuracy);
             getWeather(location.coords.latitude, location.coords.longitude);
           });
     } else {
@@ -37,8 +34,6 @@ function geocode(){
   .then((data) => {
     if (data.length > 0) {
       const result = data[0];
-      console.log(`Latitude: ${result.lat}`);
-      console.log(`Longitude: ${result.lon}`);
       getWeather(result.lat, result.lon);
     } else {
       console.error("No results found for the provided address.");
