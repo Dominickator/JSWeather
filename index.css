@@ -23,11 +23,20 @@ body{
     align-self: center;
     align-content: center;
     justify-content: center;
+    margin-bottom: 1rem;
 }
 
 .maininfobox h1{
-    font-size: 7rem;
+    font-size: 6rem;
     font-weight: 600;
+    text-align: center;
+    padding: auto;
+    margin: 1.5rem;
+}
+
+.maininfobox h2{
+    font-size: 2rem;
+    font-weight: 500;
     text-align: center;
     padding: 0;
     margin: 1.5rem;
@@ -83,3 +92,123 @@ body{
 .inputbox img:hover{
     cursor: pointer;
 }
+
+.inputbox .search-button{
+    display: inline-block;
+    color: #f2f2f2;
+    background-color: cornflowerblue;
+    border: none;
+    margin: auto;
+    height: 2rem;
+    border-radius: 7px;
+    padding: auto;
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    vertical-align:auto;
+}
+
+.inputbox .search-button:hover{
+    background-color: rgb(78, 119, 194);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .inputbox {
+        display: flex;
+        width: 95%;
+    }
+
+    .maininfobox{
+        display: flexbox;
+        margin: auto;
+        border-style: solid;
+        border-color: #404040;
+        border-radius: 7px;
+        background-color: #242424;
+        -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
+        width: 95%;
+        align-items: center;
+        align-self: center;
+        align-content: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+    
+
+    .maininfobox h1{
+        font-size: 4rem;
+        font-weight: 600;
+        text-align: center;
+        padding: auto;
+        margin: 1.5rem;
+    }
+    
+    .maininfobox h2{
+        font-size: 1.25rem;
+        font-weight: 500;
+        text-align: center;
+        padding: 0;
+        margin: 1.5rem;
+    }
+
+    .inputbox input {
+        display: inline-block;
+        margin-right: 0;
+        background-color: #242424;
+        color: #f2f2f2;
+        border-color: #404040;
+        text-align: auto;
+        width: 100%;
+        height: 2rem;
+        font-size: 1.25rem;
+        font-family: 'Cantarell';
+        -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+        border-style: solid;
+        border-color: #404040;
+        border-radius: 7px;
+        outline: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .inputbox input:focus{
+        border-color:cornflowerblue;
+    }
+    
+    .inputbox img {
+        display: flex;
+        max-width: 1.5rem;
+        max-height: 1.5rem;
+        margin: auto;
+        padding: auto;
+        margin-left: 0;
+    }
+    
+    .inputbox img:hover{
+        cursor: pointer;
+    }
+    
+    .inputbox .search-button{
+        width: 0;
+        font-size: 0;
+        height: 0;
+        margin: 0;
+        padding: .5rem;
+        visibility: hidden;
+    }
+    
+    .inputbox .search-button:hover{
+        background-color: rgb(78, 119, 194);
+        cursor: pointer;
+    }
+}
+

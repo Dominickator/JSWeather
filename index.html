@@ -9,12 +9,22 @@
 </head>
 <body>
     <div class="inputbox">
-        <input type="text" />
+        <input id="searchbox" type="text" placeholder="Enter a location"/>
+        <button type="button" class="search-button" onclick="geocode()">Search</button>
         <img id="locationbutton" onclick="getLocation()" src="icons/locationtoggle.png"/>
     </div>
     
     <div class="maininfobox">
-        <h1>75F</h1>
+        <h2 id="csheader">CITY, STATE</h2>
+        <h1 id="currtempheader">N/A</h1>
+    </div>
+
+    <div class="maininfobox">
+        <h2  id="currcondition">Curent Conditions: </h2>
+        <h2 id="currprec">Chance of Percipitation: </h2>
+        <h2 id="currdewpoint">Dew Point: </h2>
+        <h2 id="currhumidity">Humidity: </h2>
+        <h2 id="currwind">Wind: </h2>
     </div>
 </body>
 </html>
