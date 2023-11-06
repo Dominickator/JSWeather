@@ -1,5 +1,5 @@
 <script>
-  import { get } from 'svelte/store';
+    import { get } from 'svelte/store';
     import '../css/page.css';
 
     let cityinput = '';
@@ -38,7 +38,7 @@
         }
     }
 
-    getLocation();
+    //getLocation();
 
     async function geocode(cityholder){
         try {
@@ -131,7 +131,9 @@
 <div class="inputbuttonholder">
     <form on:submit|preventDefault={() => {geocode(cityinput)}}>
         <input type=text bind:value={cityinput} placeholder="Enter Location">
-        <button type="submit">Submit</button>
+        <button class="inputbuttonholderbutton" type="submit">Submit</button>
+        <button on:click={() => {getLocation()}} class="image-button"><img alt="Get Location" src='src/images/location.png'/></button>
+    </form>
 </div>
 
 {#if weatherarray.length > 0}
@@ -175,6 +177,7 @@
 
 {:else}
     <div class="container">
-        <h1 style="font-size: 3rem;">Enter a location to get the weather</h1>
+        <h1 style="font-size: 2rem;">N/A</h1>
+        <h2 style="font-size: 1.5rem;">Enter a location or press current location button to get the weather.</h2>
     </div>
 {/if}

@@ -74,7 +74,7 @@ input:focus{
     margin-top: 2rem;
 }
 
-.inputbuttonholder button{
+.inputbuttonholderbutton{
     display: inline-block;
     width: 14%;
     height: 3rem;
@@ -83,6 +83,7 @@ input:focus{
     font-size: 1.5rem;
     margin: auto;
     margin-left: 1rem;
+    margin-right: 1rem;
     outline: none;
     padding: 0;
     cursor:pointer;
@@ -153,9 +154,40 @@ input:focus{
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.inputbuttonholder img{
+    display: inline-block;
+    cursor: pointer;
+    max-height: 3.5rem;
+    width: auto;
+    margin: auto;
+    padding: 0;
+    vertical-align:bottom;
+}
   
 .card:hover {
     transform: translateY(-3px) scale(1.1);
+}
+
+.image-button {
+    display: inline-block;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    margin-top: 2rem;
+    vertical-align: bottom;
+}
+
+.image-button img{
+    display: inline-block;
+    cursor: pointer;
+    max-height: 3.5rem;
+    width: auto;
+    margin: auto;
+    padding: 0;
+    vertical-align:bottom;
 }
 
 @media (max-width: 768px){
@@ -177,14 +209,17 @@ input:focus{
     }
 
     input{
-        width: 90vw;
+        width: 70vw;
         margin: auto;
+        margin-right: 0;
     }
 
-    .inputbuttonholder button{
+    .inputbuttonholderbutton{
         visibility: hidden;
         width: 0;
         height: 0;
+        margin: 0;
+        padding: 0;
     }
 
     .futurecontainer{
@@ -207,5 +242,12 @@ input:focus{
 
     .card:hover{
         transform: translateY(0) scale(1);
+    }
+
+    img{
+        max-height: 2.5rem;
+        width: auto;
+        height: auto;
+        margin: 0;
     }
 }
