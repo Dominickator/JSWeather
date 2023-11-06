@@ -51,16 +51,17 @@ body{
 }
 
 input{
-    display: inline-block;
+    display: inline-flexbox;
+    justify-content: center;
+    flex-direction: row;
     margin: auto;
-    width: 70%;
+    width: 74%;
     height: 3rem;
     border-radius: 5px;
     border: solid 1px #000000;
     font-size: 1.5rem;
     padding-left: 1rem;
     outline: none;
-    margin-right: 0;
 }
 
 input:focus{
@@ -68,10 +69,12 @@ input:focus{
 }
 
 .inputbuttonholder{
-    display: flex;
-    flex-direction: row;
+    display: inline-flexbox;
     justify-content: center;
+    flex-direction: row;
     margin-top: 2rem;
+    width: 85vw;
+    margin: auto;
 }
 
 .inputbuttonholderbutton{
@@ -176,18 +179,8 @@ input:focus{
     padding: 0;
     cursor: pointer;
     outline: none;
-    margin-top: 2rem;
-    vertical-align: bottom;
-}
-
-.image-button img{
-    display: inline-block;
-    cursor: pointer;
-    max-height: 3.5rem;
-    width: auto;
     margin: auto;
-    padding: 0;
-    vertical-align:bottom;
+    vertical-align: bottom;
 }
 
 @media (max-width: 768px){
@@ -209,9 +202,12 @@ input:focus{
     }
 
     input{
-        width: 70vw;
+        width: 60vw;
         margin: auto;
         margin-right: 0;
+        font-size: 1.5rem;
+        padding: 0;
+        padding-left: 0.5rem;
     }
 
     .inputbuttonholderbutton{
@@ -220,6 +216,7 @@ input:focus{
         height: 0;
         margin: 0;
         padding: 0;
+        font-size: 0;
     }
 
     .futurecontainer{
