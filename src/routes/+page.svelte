@@ -71,7 +71,7 @@
             weatherarray = [];
             
             //Get the future forecast, only want every other period because we want the day.
-            for(let i = 1; i < 14; i++){
+            for(let i = 0; i < 14; i++){
                 const id = i;
                 const time = forecastData.properties.periods[i].name;
                 const temp = forecastData.properties.periods[i].temperature;
