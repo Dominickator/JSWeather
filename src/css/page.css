@@ -155,13 +155,12 @@ input:focus{
 }
   
 .card:hover {
-    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
     transform: translateY(-3px) scale(1.1);
 }
 
 @media (max-width: 768px){
     .container{
-        height: 50vh;
+        height: auto;
         width: 90vw;
     }
 
@@ -178,10 +177,8 @@ input:focus{
     }
 
     input{
-        width: 90%;
+        width: 90vw;
         margin: auto;
-        margin-left: 1rem;
-        margin-right: 0;
     }
 
     .inputbuttonholder button{
@@ -192,6 +189,7 @@ input:focus{
 
     .futurecontainer{
         width: 90vw;
+        height: auto;
     }
 
     .futurecontainer h1{
@@ -200,5 +198,14 @@ input:focus{
 
     .futurecontainer h2{
         font-size: 1.25rem;
+    }
+
+    .card{
+        height: fit-content;
+        padding: auto;
+    }
+
+    .card:hover{
+        transform: translateY(0) scale(1);
     }
 }
