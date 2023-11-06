@@ -132,7 +132,7 @@
     <form on:submit|preventDefault={() => {geocode(cityinput)}}>
         <input type=text bind:value={cityinput} placeholder="Enter Location">
         <button class="inputbuttonholderbutton" type="submit">Submit</button>
-        <button on:click={() => {getLocation()}} class="image-button"><img alt="Get Location" src='src/images/location.png'/></button>
+        <button on:click={() => {getLocation()}} class="image-button"><img alt="Get Location" src='/weather-svelte/location.png'/></button>
     </form>
 </div>
 
