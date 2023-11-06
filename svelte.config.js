@@ -21,8 +21,7 @@ const config = {
 		paths: {
 			base: dev ? '' : '/weather-svelte',
 		},
-		AppDir: 'internal',
-		trailingSlash: 'always'
+		appDir: 'internal',
 	  }
 };
 

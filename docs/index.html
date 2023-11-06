@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="./internal/immutable/assets/2.ac9aefdc.css" rel="stylesheet">
+		<link rel="modulepreload" href="./internal/immutable/entry/start.512f303e.js">
+		<link rel="modulepreload" href="./internal/immutable/chunks/scheduler.e108d1fd.js">
+		<link rel="modulepreload" href="./internal/immutable/chunks/singletons.e011012f.js">
+		<link rel="modulepreload" href="./internal/immutable/entry/app.807b9898.js">
+		<link rel="modulepreload" href="./internal/immutable/chunks/index.786a472e.js">
+		<link rel="modulepreload" href="./internal/immutable/nodes/0.6faf6b25.js">
+		<link rel="modulepreload" href="./internal/immutable/nodes/2.1302b027.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">  <div class="inputbuttonholder"><form><input type="text" placeholder="Enter Location" value=""> <button type="submit" data-svelte-h="svelte-1ou7dtz">Submit</button></form></div> <div class="container" data-svelte-h="svelte-13kn1hw"><h1 style="font-size: 3rem;">Enter a location to get the weather</h1></div> 
+			
+			<script>
+				{
+					__sveltekit_1ik4k5z = {
+						assets: "/weather-svelte",
+						base: new URL(".", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./internal/immutable/entry/start.512f303e.js"),
+						import("./internal/immutable/entry/app.807b9898.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
