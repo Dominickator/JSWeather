@@ -8,20 +8,21 @@ const dev = process.env.NODE_ENV !== 'production';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
+		adapter: adapter({
+			// default options are shown. On some platforms
+			// these options are set automatically — see below
+			pages: 'docs',
+			assets: 'docs',
+			fallback: null,
+			precompress: false,
+			domain: '',
+			jekyll: false
+		  }),
 		paths: {
 			base: dev ? '' : '/weather-svelte',
 		},
-		trailingSlash: 'always',
-		adapter: adapter({
-		  // default options are shown. On some platforms
-		  // these options are set automatically — see below
-		  pages: 'docs',
-		  assets: 'docs',
-		  fallback: null,
-		  precompress: false,
-		  domain: '',
-		  jekyll: false
-		})
+		AppDir: 'internal',
+		trailingSlash: 'always'
 	  }
 };
 
