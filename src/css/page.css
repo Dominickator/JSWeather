@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root{
-    --background-color: #9dbae3;
-    --text-color: #000000;
-    --font-family: 'Noto Sans', sans-serif;
+    --background-color: #8ecae6;
+    --text-color: #023047;
+    --font-family: 'Inter', sans-serif;
 }
 
 body{
@@ -12,31 +12,122 @@ body{
     font-family: var(--font-family);
 }
 
-.container{
+.carousel {
+    width: 95%;
+    height: 90%;
+    overflow: auto;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 10px;
+    margin: 1rem;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.carousel::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+.carousel::-webkit-scrollbar-track {
+    background: none; /* Color of the track */
+}
+
+.carousel::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scroll thumb */
+    border-radius: 10px; /* Roundness of the scroll thumb */
+}
+
+.carousel::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scroll thumb on hover */
+}
+
+.carousel .box {
+    height: 90%;
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    width: 15rem;
+    border: 1px solid rgba(255,255,255,0.3); /* Optional: adds a subtle border */
+    border-radius: 10px;
+    background: rgba(33, 158, 188, 0.1); /* Semi-transparent background */
+    border-radius: 10px; /* Optional: adds rounded corners */
+    backdrop-filter: blur(10px); /* Apply blur effect to the background seen through the container */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    transition: all 300ms;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    height: auto;
-    width: 85vw;
-    background-color: #7293c2;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
-    border: solid 1px #000000;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    scroll-margin: 1rem;
+}
+
+.carousel .box:hover {
+    transform: scale(1.05); /* Adjust scale as necessary */
+    transition: transform 300ms ease-in-out; /* Smooth transition for the transform */
+    z-index: 1; /* Ensure the scaled box is above the others */
+}
+
+.carousel .box h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
     margin: auto;
-    margin-top: 1rem;
+}
+
+.carousel .box h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    width: 70vw;
+    height: 25rem; /* Adjust as needed */
+    background: rgba(255, 183, 3, 0.10); /* Semi-transparent white background */
+    border-radius: 10px; /* Optional: adds rounded corners */
+    backdrop-filter: blur(10px); /* Apply blur effect to the background seen through the container */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for depth */
+    border: 1px solid rgba(255,255,255,0.3); /* Optional: adds a subtle border */
+    overflow: hidden; /* Ensure the blur does not bleed outside the border-radius */
+}
+
+.half-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This will align the text vertically in the center */
+    justify-content: center; /* This will align the text horizontally in the center */
+    padding: 0;
+    width: 45vw;
+    height: 100%;
+    border-radius: 10px;
+    margin: auto;
 }
 
 .container h1{
-    font-size: 6rem;
-    font-weight: 400;
-    margin: 0;
+    font-size: 8rem;
+    font-weight: bold;
+    margin: auto;
     text-align: center;
     padding: 0;
 }
 
 .container h2{
     font-size: 2rem;
-    font-weight: 400;
-    margin-top: 0rem;
+    font-weight: 500;
+    margin: auto;
     text-align: center;
     padding: 0;
 }
@@ -50,141 +141,83 @@ body{
     padding: 0;
 }
 
-input{
-    display: inline-flexbox;
-    justify-content: center;
-    flex-direction: row;
-    margin: auto;
-    width: 74%;
-    height: 3rem;
-    border-radius: 5px;
-    border: solid 1px #000000;
-    font-size: 1.5rem;
-    padding-left: 1rem;
-    outline: none;
-}
-
-input:focus{
-    border: solid 3px #7293c2;
-}
-
-.inputbuttonholder{
-    display: inline-flexbox;
-    justify-content: center;
-    flex-direction: row;
-    margin-top: 2rem;
-    width: 85vw;
-    margin: auto;
-}
-
-.inputbuttonholderbutton{
-    display: inline-block;
-    width: 14%;
-    height: 3rem;
-    border-radius: 5px;
-    border: solid 1px #000000;
-    font-size: 1.5rem;
-    margin: auto;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    outline: none;
-    padding: 0;
-    cursor:pointer;
-}
-
-.futurecontainer{
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    width: 85vw;
-    background-color: #7293c2;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
-    border: solid 1px #000000;
-    margin: auto;
-    margin-top: 1rem;
-}
-
-.futurecontainer h1{
-    font-size: 2.5rem;
-    font-weight: 400;
-    margin-top: 0rem;
-    text-align: center;
-    padding: 0;
-}
-
-.futurecontainer h2{
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-top: 0rem;
-    text-align: center;
-    padding: 0;
-}
-
-.futurecontainer h3{
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
-    text-align: center;
-    padding: 0;
-}
-
-.forecast-grid{
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    margin: 1rem;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #7b9fd1;
-    font-size: 3rem;
-    color: black;
-    -webkit-box-shadow: 0px 0px 7px 1px #000000; 
-    box-shadow: 0px 0px 7px 1px #000000;
-    height: 100%;
-    min-height: 15rem;
-    width: 100%;
-    border-radius: 10px;
-    transition: all 300ms;
-    overflow: hidden;
-    border: 1px solid #000000;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.inputbuttonholder img{
-    display: inline-block;
-    cursor: pointer;
-    max-height: 3.5rem;
-    width: auto;
-    margin: auto;
-    padding: 0;
-    vertical-align:bottom;
-}
-
-.card:hover {
-    transform: translateY(-3px) scale(1.1);
-}
-
-.image-button {
-    display: inline-block;
-    border: none;
-    background: none;
-    padding: 0;
-    cursor: pointer;
-    outline: none;
-    margin: auto;
-    vertical-align: bottom;
-}
-
 @media (max-width: 768px){
+
+    .carousel {
+        width: 90%;
+        height: 100%;
+        overflow: auto;
+        display: flex;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 10px;
+        margin: 1rem;
+        background: none;
+        border: none;
+        padding: 0;
+    }
+    
+    .carousel::-webkit-scrollbar {
+        width: 25px; /* Width of the scrollbar */
+        height: 10px;
+    }
+    
+    .carousel::-webkit-scrollbar-track {
+        background: none; /* Color of the track */
+    }
+    
+    .carousel::-webkit-scrollbar-thumb {
+        background: #888; /* Color of the scroll thumb */
+        border-radius: 10px; /* Roundness of the scroll thumb */
+    }
+    
+    .carousel::-webkit-scrollbar-thumb:hover {
+        background: #555; /* Color of the scroll thumb on hover */
+    }
+    
+    .carousel .box {
+        height: 100%;
+        flex: 0 0 auto;
+        scroll-snap-align: center;
+        width: 15rem;
+        border: 1px solid rgba(255,255,255,0.3); /* Optional: adds a subtle border */
+        border-radius: 10px;
+        background: rgba(33, 158, 188, 0.1); /* Semi-transparent background */
+        border-radius: 10px; /* Optional: adds rounded corners */
+        backdrop-filter: blur(10px); /* Apply blur effect to the background seen through the container */
+        -webkit-backdrop-filter: blur(10px); /* For Safari */
+        transition: all 300ms;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        margin: 0.5rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        scroll-margin: 1rem;
+    }
+    
+    .carousel .box:hover {
+        transform: scale(1); /* Adjust scale as necessary */
+        transition: transform 300ms ease-in-out; /* Smooth transition for the transform */
+        z-index: 1; /* Ensure the scaled box is above the others */
+    }
+    
+    .carousel .box h2 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 0.5rem auto;
+    }
+    
+    .carousel .box h3 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin: 0.5rem auto;
+    }
+
     .container{
         height: auto;
         width: 90vw;
@@ -192,32 +225,16 @@ input:focus{
 
     .container h1{
         font-size: 4rem;
+        margin: 0;
     }
 
     .container h2{
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+        margin: 0.5rem;
     }
 
     .container h3{
         font-size: 1.25rem;
-    }
-
-    input{
-        width: 60vw;
-        margin: auto;
-        margin-right: 0;
-        font-size: 1.5rem;
-        padding: 0;
-        padding-left: 0.5rem;
-    }
-
-    .inputbuttonholderbutton{
-        visibility: hidden;
-        width: 0;
-        height: 0;
-        margin: 0;
-        padding: 0;
-        font-size: 0;
     }
 
     .futurecontainer{
