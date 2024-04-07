@@ -28,28 +28,13 @@
     let weather = new WeatherInfo(0, '', '', '', '', '', '', '', '');
 
     async function getLocation(){
-        if(navigator.geolocation){
+        if (typeof window !== 'undefined' && navigator.geolocation){
             navigator.geolocation.getCurrentPosition(function(location) {
                 getWeather(location.coords.latitude, location.coords.longitude);
             })
         }
         else {
             console.log("Geolocation is not supported by this browser.");
-        }
-    }
-
-    //getLocation();
-
-    async function geocode(cityholder){
-        try {
-            const response = await fetch(`https://www.mapquestapi.com/geocoding/v1/address?key=wjpJ15pusl6QcDsyKeAHRmdjCN2LYPoF&location=${cityholder}`);
-            const data = await response.json();
-            const latitude = data.results[0].locations[0].latLng.lat;
-            const longitude = data.results[0].locations[0].latLng.lng;
-            getWeather(latitude, longitude);
-            cityinput = ''; // Bind this inside the success path
-        } catch (err) {
-            console.log(err);
         }
     }
 
@@ -126,53 +111,51 @@
             console.log(err);
         }
     }
-</script>
 
-<div class="inputbuttonholder">
-    <form on:submit|preventDefault={() => {geocode(cityinput)}}>
-        <input type=text bind:value={cityinput} placeholder="Enter Location">
-        <button class="inputbuttonholderbutton" type="submit">Submit</button>
-        <button on:click={() => {getLocation()}} class="image-button"><img alt="Get Location" src='/weather-svelte/location.png'/></button>
-    </form>
-</div>
+    getLocation();
+</script>
 
 {#if weatherarray.length > 0}
     <div class="container">
-        <h3>{city}, {state}</h3>
-        <h1>{weather.temp}°F</h1>
-        <h2>{weather.shortforecast}</h2>
-        <h2>Dewpoint: {weather.dewpoint}°F</h2>
-        <h2>Humidity: {weather.humidity}%</h2>
-        <h2>Wind: {weather.windspeed} {weather.winddirection}</h2>
-        <h2>{weather.precipitationpercent}% chance of precipitation</h2>
+        <div class="half-container">
+            <h2>{city}, {state}</h2>
+            <h1>{weather.temp}°F</h1>
+            <h2>{weather.shortforecast}</h2>
+        </div>
+        <div class="half-container">
+            <h2>Dewpoint: {weather.dewpoint}°F</h2>
+            <h2>Humidity: {weather.humidity}%</h2>
+            <h2>Wind: {weather.windspeed} {weather.winddirection}</h2>
+            <h2>{weather.precipitationpercent}% chance of precipitation</h2>
+        </div>
     </div>
 
-    <div class="futurecontainer">
-        <h1>Future Forecast</h1>
-        <section class="forecast-grid">
+    <div class="container" style="flex-direction: column;">
+        <h1 style="font-size: 2.2rem; margin: 1rem">Future Forecast</h1>
+        <div class="carousel">
             {#each weatherarray as weather, index (weather.id)}
-                <div class="card">
-                    <h3>{weather.time}</h3>
+                <div class="box">
+                    <h2>{weather.time}</h2>
                     <h2>{weather.temp}°F</h2>
-                    <h2>{weather.shortforecast}</h2>
-                    <h2>{weather.precipitationpercent}% chance of precipitation</h2>
+                    <h2>{weather.shortforecast.split(' ')[0] === 'Showers' ? weather.shortforecast.split(' ')[0] : weather.shortforecast.split(' ').slice(0, 2).join(' ')}</h2>
+                    <h3>{weather.precipitationpercent}% chance of precipitation</h3>
                 </div>
             {/each}
-        </section>
+        </div>
     </div>
 
-    <div class="futurecontainer">
-        <h1>Hourly Forecast</h1>
-        <section class="forecast-grid">
+    <div class="container" style="flex-direction: column;">
+        <h1 style="font-size: 2.2rem; margin: 1rem">Hourly Forecast</h1>
+        <div class="carousel">
             {#each hourlyarray as hour (hour.id)}
-                <div class="card">
-                    <h3>{hour.time}</h3>
+                <div class="box">
+                    <h2>{hour.time}</h2>
                     <h2>{hour.temp}°F</h2>
                     <h2>{hour.shortforecast}</h2>
-                    <h2>{hour.precipitationpercent}% chance of precipitation</h2>
+                    <h3>{hour.precipitationpercent}% chance of precipitation</h3>
                 </div>
             {/each}
-        </section>
+        </div>
     </div>
 
 {:else}
