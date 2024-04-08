@@ -221,6 +221,17 @@ body{
     .container{
         height: auto;
         width: 90vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .half-container{
+        display: flex;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        justify-content: center;
     }
 
     .container h1{
@@ -229,40 +240,11 @@ body{
     }
 
     .container h2{
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         margin: 0.5rem;
     }
 
     .container h3{
         font-size: 1.25rem;
-    }
-
-    .futurecontainer{
-        width: 90vw;
-        height: auto;
-    }
-
-    .futurecontainer h1{
-        font-size: 2rem;
-    }
-
-    .futurecontainer h2{
-        font-size: 1.25rem;
-    }
-
-    .card{
-        height: fit-content;
-        padding: auto;
-    }
-
-    .card:hover{
-        transform: translateY(0) scale(1);
-    }
-
-    img{
-        max-height: 2.5rem;
-        width: auto;
-        height: auto;
-        margin: 0;
     }
 }
