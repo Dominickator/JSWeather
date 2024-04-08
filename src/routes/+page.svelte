@@ -161,6 +161,6 @@
 {:else}
     <div class="container">
         <h1 style="font-size: 2rem;">N/A</h1>
-        <h2 style="font-size: 1.5rem;">Enter a location or press current location button to get the weather.</h2>
+        <h2 style="font-size: 1.5rem;">Please allow the browser to access your location in order to get the current weather.</h2>
     </div>
 {/if}
