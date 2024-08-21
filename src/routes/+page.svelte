@@ -63,7 +63,7 @@
                 const humidity = forecastData.properties.periods[i].relativeHumidity?.value || '';
                 const windspeed = forecastData.properties.periods[i].windSpeed;
                 const winddirection = forecastData.properties.periods[i].windDirection;
-                const dewpoint = forecastData.properties.periods[i].dewpoint.value;
+                const dewpoint = forecastData.properties.periods[i].dewpoint?.value || '';
                 const shortforecast = forecastData.properties.periods[i].shortForecast;
                 const precipitationpercent = forecastData.properties.periods[i].probabilityOfPrecipitation.value ? forecastData.properties.periods[i].probabilityOfPrecipitation.value : 0;
                 weatherarray.push(new WeatherInfo(id, time, temp, humidity, windspeed, winddirection, dewpoint, shortforecast, precipitationpercent));
