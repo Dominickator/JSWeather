@@ -60,7 +60,7 @@
                 const id = i;
                 const time = forecastData.properties.periods[i].name;
                 const temp = forecastData.properties.periods[i].temperature;
-                const humidity = forecastData.properties.periods[i].relativeHumidity.value;
+                const humidity = forecastData.properties.periods[i].relativeHumidity?.value || '';
                 const windspeed = forecastData.properties.periods[i].windSpeed;
                 const winddirection = forecastData.properties.periods[i].windDirection;
                 const dewpoint = forecastData.properties.periods[i].dewpoint.value;
