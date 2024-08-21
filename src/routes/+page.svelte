@@ -98,7 +98,7 @@
                     time = time + " AM";
                 }
                 const temp = hourlyData.properties.periods[i].temperature;
-                const humidity = hourlyData.properties.periods[i].relativeHumidity.value;
+                const humidity = hourlyData.properties.periods[i].relativeHumidity?.value || '';
                 const windspeed = hourlyData.properties.periods[i].windSpeed;
                 const winddirection = hourlyData.properties.periods[i].windDirection;
                 const dewpoint = hourlyData.properties.periods[i].dewpoint.value;
