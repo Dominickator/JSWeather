@@ -1,38 +1,48 @@
-# create-svelte
+# Weather App - Svelte
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is a simple weather application built using the Svelte JavaScript framework. It integrates two APIs: the National Weather Service (NWS) Weather API and the MapQuest API to provide weather data based on user input locations. The app converts location strings to coordinates and retrieves weather information accordingly.
 
-## Creating a project
+## Features
+- **Location Search**: Converts user input into coordinates using the MapQuest API.
+- **Weather Data**: Displays current weather conditions retrieved from the NWS Weather API.
+- **API Integration**: Utilizes RESTful API calls to gather data and display it in a user-friendly interface.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Tools Used
+- **Svelte**: JavaScript framework for building the UI.
+- **MapQuest API**: Used to convert location names into geographic coordinates.
+- **NWS Weather API**: Used to fetch current weather conditions for the specified location.
+- **Postman & Insomnia REST**: For testing and interacting with APIs during development.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## How to Use
+Visit the live site here: [Weather App](https://dominickator.github.io/weather-svelte).
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+1. Enter a location (e.g., city or place name).
+2. The app converts the input to coordinates.
+3. The weather data for the specified location is displayed, including temperature, conditions, and other relevant information.
 
-## Developing
+## Installation Instructions
+To run this app locally:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Dominickator/weather-svelte.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd weather-svelte
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open your browser and go to `http://localhost:5000` to view the app.
 
-```bash
-npm run dev
+## Project Overview
+This project was a hands-on learning experience focused on interacting with APIs, building dynamic interfaces using Svelte, and deploying a web application using GitHub Pages. It has enhanced my understanding of API calls, data parsing, and frontend development workflows.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## License
+This project is licensed under the MIT License.
