@@ -16,7 +16,7 @@ This is a simple weather application built using the Svelte JavaScript framework
 ## How to Use
 Visit the live site here: [Weather App](https://dominickator.github.io/weather-svelte).
 
-1. Enter a location (e.g., city or place name).
+1. Allow the app to view your location for the weather.
 2. The app converts the input to coordinates.
 3. The weather data for the specified location is displayed, including temperature, conditions, and other relevant information.
 
