@@ -60,12 +60,12 @@
                 const id = i;
                 const time = forecastData.properties.periods[i].name;
                 const temp = forecastData.properties.periods[i].temperature;
-                const humidity = forecastData.properties.periods[i].relativeHumidity.value;
+                const humidity = forecastData.properties.periods[i].relativeHumidity?.value || '';
                 const windspeed = forecastData.properties.periods[i].windSpeed;
                 const winddirection = forecastData.properties.periods[i].windDirection;
-                const dewpoint = forecastData.properties.periods[i].dewpoint.value;
+                const dewpoint = forecastData.properties.periods[i].dewpoint?.value || '';
                 const shortforecast = forecastData.properties.periods[i].shortForecast;
-                const precipitationpercent = forecastData.properties.periods[i].probabilityOfPrecipitation.value ? forecastData.properties.periods[i].probabilityOfPrecipitation.value : 0;
+                const precipitationpercent = forecastData.properties.periods[i].probabilityOfPrecipitation?.value || 0;
                 weatherarray.push(new WeatherInfo(id, time, temp, humidity, windspeed, winddirection, dewpoint, shortforecast, precipitationpercent));
             }
 
@@ -112,7 +112,8 @@
         }
     }
 
-    getLocation();
+    // getLocation();
+    getWeather(40.7128, -74.0060);
 </script>
 
 {#if weatherarray.length > 0}
