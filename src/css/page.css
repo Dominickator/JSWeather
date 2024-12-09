@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-:root{
-    --background-color: #8ecae6;
-    --text-color: #023047;
+:root {
+    --background-color: #D0EFFF;
+    --text-color: #2C3E50;
     --font-family: 'Inter', sans-serif;
+    --card-color: #F5F5F5;
+    --small-card-color: #CCE7F0;
 }
 
-body{
+body {
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: var(--font-family);
@@ -28,20 +30,25 @@ body{
 }
 
 .carousel::-webkit-scrollbar {
-    width: 10px; /* Width of the scrollbar */
+    width: 10px;
+    /* Width of the scrollbar */
 }
 
 .carousel::-webkit-scrollbar-track {
-    background: none; /* Color of the track */
+    background: none;
+    /* Color of the track */
 }
 
 .carousel::-webkit-scrollbar-thumb {
-    background: #888; /* Color of the scroll thumb */
-    border-radius: 10px; /* Roundness of the scroll thumb */
+    background: #888;
+    /* Color of the scroll thumb */
+    border-radius: 10px;
+    /* Roundness of the scroll thumb */
 }
 
 .carousel::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Color of the scroll thumb on hover */
+    background: #555;
+    /* Color of the scroll thumb on hover */
 }
 
 .carousel .box {
@@ -49,12 +56,17 @@ body{
     flex: 0 0 auto;
     scroll-snap-align: center;
     width: 15rem;
-    border: 1px solid rgba(255,255,255,0.3); /* Optional: adds a subtle border */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Optional: adds a subtle border */
     border-radius: 10px;
-    background: rgba(33, 158, 188, 0.1); /* Semi-transparent background */
-    border-radius: 10px; /* Optional: adds rounded corners */
-    backdrop-filter: blur(10px); /* Apply blur effect to the background seen through the container */
-    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    background: var(--small-card-color);
+    /* Semi-transparent background */
+    border-radius: 10px;
+    /* Optional: adds rounded corners */
+    backdrop-filter: blur(10px);
+    /* Apply blur effect to the background seen through the container */
+    -webkit-backdrop-filter: blur(10px);
+    /* For Safari */
     transition: all 300ms;
     overflow: hidden;
     display: flex;
@@ -69,9 +81,12 @@ body{
 }
 
 .carousel .box:hover {
-    transform: scale(1.05); /* Adjust scale as necessary */
-    transition: transform 300ms ease-in-out; /* Smooth transition for the transform */
-    z-index: 1; /* Ensure the scaled box is above the others */
+    transform: scale(1.05);
+    /* Adjust scale as necessary */
+    transition: transform 300ms ease-in-out;
+    /* Smooth transition for the transform */
+    z-index: 1;
+    /* Ensure the scaled box is above the others */
 }
 
 .carousel .box h2 {
@@ -94,21 +109,31 @@ body{
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
     width: 70vw;
-    height: 25rem; /* Adjust as needed */
-    background: rgba(255, 183, 3, 0.10); /* Semi-transparent white background */
-    border-radius: 10px; /* Optional: adds rounded corners */
-    backdrop-filter: blur(10px); /* Apply blur effect to the background seen through the container */
-    -webkit-backdrop-filter: blur(10px); /* For Safari */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for depth */
-    border: 1px solid rgba(255,255,255,0.3); /* Optional: adds a subtle border */
-    overflow: hidden; /* Ensure the blur does not bleed outside the border-radius */
+    height: 25rem;
+    /* Adjust as needed */
+    background: var(--card-color);
+    /* Semi-transparent white background */
+    border-radius: 10px;
+    /* Optional: adds rounded corners */
+    backdrop-filter: blur(10px);
+    /* Apply blur effect to the background seen through the container */
+    -webkit-backdrop-filter: blur(10px);
+    /* For Safari */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional: adds a subtle shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Optional: adds a subtle border */
+    overflow: hidden;
+    /* Ensure the blur does not bleed outside the border-radius */
 }
 
-.half-container{
+.half-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* This will align the text vertically in the center */
-    justify-content: center; /* This will align the text horizontally in the center */
+    align-items: center;
+    /* This will align the text vertically in the center */
+    justify-content: center;
+    /* This will align the text horizontally in the center */
     padding: 0;
     width: 45vw;
     height: 100%;
@@ -116,7 +141,7 @@ body{
     margin: auto;
 }
 
-.container h1{
+.container h1 {
     font-size: 8rem;
     font-weight: bold;
     margin: auto;
@@ -124,7 +149,7 @@ body{
     padding: 0;
 }
 
-.container h2{
+.container h2 {
     font-size: 2rem;
     font-weight: 500;
     margin: auto;
@@ -132,7 +157,7 @@ body{
     padding: 0;
 }
 
-.container h3{
+.container h3 {
     font-size: 1.5rem;
     font-weight: 400;
     margin-top: 0.75rem;
@@ -141,7 +166,7 @@ body{
     padding: 0;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
     .carousel {
         width: 90%;
@@ -157,36 +182,46 @@ body{
         border: none;
         padding: 0;
     }
-    
+
     .carousel::-webkit-scrollbar {
-        width: 25px; /* Width of the scrollbar */
+        width: 25px;
+        /* Width of the scrollbar */
         height: 10px;
     }
-    
+
     .carousel::-webkit-scrollbar-track {
-        background: none; /* Color of the track */
+        background: none;
+        /* Color of the track */
     }
-    
+
     .carousel::-webkit-scrollbar-thumb {
-        background: #888; /* Color of the scroll thumb */
-        border-radius: 10px; /* Roundness of the scroll thumb */
+        background: #888;
+        /* Color of the scroll thumb */
+        border-radius: 10px;
+        /* Roundness of the scroll thumb */
     }
-    
+
     .carousel::-webkit-scrollbar-thumb:hover {
-        background: #555; /* Color of the scroll thumb on hover */
+        background: #555;
+        /* Color of the scroll thumb on hover */
     }
-    
+
     .carousel .box {
         height: 100%;
         flex: 0 0 auto;
         scroll-snap-align: center;
         width: 15rem;
-        border: 1px solid rgba(255,255,255,0.3); /* Optional: adds a subtle border */
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        /* Optional: adds a subtle border */
         border-radius: 10px;
-        background: rgba(33, 158, 188, 0.1); /* Semi-transparent background */
-        border-radius: 10px; /* Optional: adds rounded corners */
-        backdrop-filter: blur(10px); /* Apply blur effect to the background seen through the container */
-        -webkit-backdrop-filter: blur(10px); /* For Safari */
+        background: var(--small-card-color);
+        /* Semi-transparent background */
+        border-radius: 10px;
+        /* Optional: adds rounded corners */
+        backdrop-filter: blur(10px);
+        /* Apply blur effect to the background seen through the container */
+        -webkit-backdrop-filter: blur(10px);
+        /* For Safari */
         transition: all 300ms;
         overflow: hidden;
         display: flex;
@@ -199,26 +234,29 @@ body{
         cursor: pointer;
         scroll-margin: 1rem;
     }
-    
+
     .carousel .box:hover {
-        transform: scale(1); /* Adjust scale as necessary */
-        transition: transform 300ms ease-in-out; /* Smooth transition for the transform */
-        z-index: 1; /* Ensure the scaled box is above the others */
+        transform: scale(1);
+        /* Adjust scale as necessary */
+        transition: transform 300ms ease-in-out;
+        /* Smooth transition for the transform */
+        z-index: 1;
+        /* Ensure the scaled box is above the others */
     }
-    
+
     .carousel .box h2 {
         font-size: 1.5rem;
         font-weight: 500;
         margin: 0.5rem auto;
     }
-    
+
     .carousel .box h3 {
         font-size: 1.25rem;
         font-weight: 500;
         margin: 0.5rem auto;
     }
 
-    .container{
+    .container {
         height: auto;
         width: 90vw;
         display: flex;
@@ -226,7 +264,7 @@ body{
         justify-content: center;
     }
 
-    .half-container{
+    .half-container {
         display: flex;
         width: 100%;
         height: auto;
@@ -234,17 +272,17 @@ body{
         justify-content: center;
     }
 
-    .container h1{
+    .container h1 {
         font-size: 4rem;
         margin: 0;
     }
 
-    .container h2{
+    .container h2 {
         font-size: 1.5rem;
         margin: 0.5rem;
     }
 
-    .container h3{
+    .container h3 {
         font-size: 1.25rem;
     }
 }
